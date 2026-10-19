@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kocatepe Genetik Topluluğu</title>
+  <meta name="description" content="Kocatepe Genetik Topluluğu — Instagram, uygulamamız ve topluluk sayfamıza hızlı erişim." />
+  <meta property="og:title" content="Kocatepe Genetik Topluluğu" />
+  <meta property="og:description" content="Instagram, uygulamamız ve topluluk sayfamıza hızlı erişim." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121a33;
+      --card: #161f3d;
+      --card-hover: #1d2850;
+      --text: #eef2ff;
+      --muted: #9aa7c7;
+      --accent: #7c5cff;
+      --accent-2: #2dd4bf;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1000px 500px at 80% -10%, rgba(124, 92, 255, 0.25), transparent 60%),
+        radial-gradient(800px 400px at 0% 110%, rgba(45, 212, 191, 0.18), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px 32px;
+    }
+
+    header { text-align: center; margin-bottom: 36px; }
+
+    .logo {
+      font-size: 56px;
+      line-height: 1;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 6px 18px rgba(124, 92, 255, 0.45));
+    }
+
+    h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #fff, #b9a8ff 60%, #7ce8dc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    a.card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--card), var(--bg-soft));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 32px 22px;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    a.card:hover, a.card:focus-visible {
+      transform: translateY(-6px);
+      border-color: rgba(124, 92, 255, 0.55);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      outline: none;
+    }
+
+    .icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+      background: rgba(124, 92, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card.instagram .icon { background: rgba(225, 48, 108, 0.16); }
+    .card.app .icon { background: rgba(45, 212, 191, 0.14); }
+    .card.community .icon { background: rgba(255, 184, 77, 0.14); }
+
+    .card h2 { font-size: 19px; font-weight: 700; }
+
+    .card p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+
+    .badge {
+      margin-top: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      background: rgba(45, 212, 191, 0.1);
+      border: 1px solid rgba(45, 212, 191, 0.25);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    footer {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .cards { grid-template-columns: 1fr; max-width: 420px; }
+      body { padding-top: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🧬</div>
+    <h1>Kocatepe Genetik Topluluğu</h1>
+    <p>Adım adım keşfet: uygulamamız, Instagram'ımız ve resmî topluluk sayfamız.</p>
+  </header>
+
+  <main class="cards">
+    <a class="card instagram"
+       href="https://www.instagram.com/kocatepegenetik/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">📸</div>
+      <h2>Instagram</h2>
+      <p>Etkinlikler, duyurular ve topluluk paylaşımları için bizi takip et.</p>
+      <span class="badge">@kocatepegenetik</span>
+    </a>
+
+    <a class="card app"
+       href="https://monchere01.github.io/kocatepe-genetik-toplulugu-app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">📱</div>
+      <h2>Uygulamamız</h2>
+      <p>Güncel PWA uygulamamızı aç: etkinlikler, duyurular ve daha fazlası.</p>
+      <span class="badge">PWA · Güncel</span>
+    </a>
+
+    <a class="card community"
+       href="https://topluluklar.aku.edu.tr/ogr.php"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">🎓</div>
+      <h2>Topluluk Sayfası</h2>
+      <p>AKÜ SKS — Moleküler Biyoloji ve Genetik topluluk resmî sayfası.</p>
+      <span class="badge">AKÜ SKS</span>
+    </a>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Kocatepe Genetik Topluluğu</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
