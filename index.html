@@ -129,8 +129,6 @@
       white-space: nowrap;
     }
 
-    .chev { display: none; }
-
     footer {
       margin-top: 44px;
       display: flex;
@@ -142,50 +140,34 @@
     }
 
     @media (max-width: 720px) {
-      body { padding: 28px 16px 24px; }
+      body { padding: 26px 16px 22px; }
 
-      header { margin-bottom: 22px; }
-      .logo { font-size: 42px; margin-bottom: 10px; }
-      h1 { font-size: 24px; }
-      header p { font-size: 13.5px; margin-top: 8px; }
+      header { margin-bottom: 20px; }
+      .logo { font-size: 40px; margin-bottom: 8px; }
+      h1 { font-size: 22px; }
+      header p { font-size: 13px; margin-top: 6px; }
 
-      .cards { gap: 12px; max-width: 480px; }
+      .cards { gap: 12px; max-width: 440px; }
 
       a.card {
-        flex-direction: row;
-        align-items: center;
-        gap: 14px;
-        text-align: left;
-        padding: 14px 16px;
+        padding: 18px 16px;
+        gap: 8px;
         border-radius: 16px;
       }
 
       a.card:hover, a.card:focus-visible { transform: none; box-shadow: none; }
       a.card:active { transform: scale(0.98); background: var(--card-hover); }
 
-      .icon { width: 46px; height: 46px; border-radius: 13px; font-size: 23px; flex-shrink: 0; }
+      .icon { width: 44px; height: 44px; border-radius: 12px; font-size: 22px; }
 
-      .card .body { align-items: flex-start; gap: 3px; flex: 1; min-width: 0; }
-      .card .head { flex-wrap: wrap; gap: 6px 8px; }
-      .card h2 { font-size: 15.5px; }
+      .card .body { gap: 5px; }
+      .card .head { gap: 6px 8px; justify-content: center; flex-wrap: wrap; }
+      .card h2 { font-size: 16px; }
       .card p { font-size: 12.5px; line-height: 1.45; }
 
       .badge { font-size: 10px; padding: 2px 8px; }
 
-      .chev {
-        display: grid;
-        place-items: center;
-        flex-shrink: 0;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--muted);
-        font-size: 15px;
-        font-weight: 700;
-      }
-
-      footer { margin-top: 28px; }
+      footer { margin-top: 26px; }
     }
   </style>
 </head>
@@ -209,7 +191,6 @@
         </div>
         <p>Etkinlikler, duyurular ve topluluk paylaşımları için bizi takip et.</p>
       </div>
-      <span class="chev" aria-hidden="true">›</span>
     </a>
 
     <a class="card app"
@@ -224,7 +205,6 @@
         </div>
         <p>Güncel PWA uygulamamızı aç: etkinlikler, duyurular ve daha fazlası.</p>
       </div>
-      <span class="chev" aria-hidden="true">›</span>
     </a>
 
     <a class="card community"
@@ -239,7 +219,6 @@
         </div>
         <p>AKÜ SKS — Moleküler Biyoloji ve Genetik topluluk resmî sayfası.</p>
       </div>
-      <span class="chev" aria-hidden="true">›</span>
     </a>
   </main>
 
