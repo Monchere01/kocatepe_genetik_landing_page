@@ -2,9 +2,11 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Kocatepe Genetik Topluluğu</title>
   <meta name="description" content="Kocatepe Genetik Topluluğu — Instagram, uygulamamız ve topluluk sayfamıza hızlı erişim." />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta property="og:title" content="Kocatepe Genetik Topluluğu" />
   <meta property="og:description" content="Instagram, uygulamamız ve topluluk sayfamıza hızlı erişim." />
   <meta property="og:type" content="website" />
@@ -12,13 +14,11 @@
   <style>
     :root {
       --bg: #0b1020;
-      --bg-soft: #121a33;
-      --card: #161f3d;
-      --card-hover: #1d2850;
+      --surface: #161f3d;
+      --surface-2: #1b2549;
       --text: #eef2ff;
-      --muted: #9aa7c7;
-      --accent: #7c5cff;
-      --accent-2: #2dd4bf;
+      --muted: #b4c0dd;
+      --line: rgba(255, 255, 255, 0.10);
       --radius: 20px;
     }
 
@@ -26,47 +26,56 @@
 
     body {
       min-height: 100vh;
-      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
       background:
-        radial-gradient(1000px 500px at 80% -10%, rgba(124, 92, 255, 0.25), transparent 60%),
-        radial-gradient(800px 400px at 0% 110%, rgba(45, 212, 191, 0.18), transparent 60%),
+        radial-gradient(900px 480px at 85% -12%, rgba(124, 92, 255, 0.28), transparent 62%),
+        radial-gradient(760px 420px at -5% 108%, rgba(45, 212, 191, 0.18), transparent 62%),
         var(--bg);
       color: var(--text);
+      -webkit-font-smoothing: antialiased;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 20px 32px;
+      padding: clamp(24px, 6vw, 52px) 16px 28px;
     }
 
-    header { text-align: center; margin-bottom: 36px; }
+    /* ---------- Başlık ---------- */
+    header {
+      text-align: center;
+      margin-bottom: clamp(22px, 5vw, 38px);
+      max-width: 640px;
+    }
 
     .logo {
-      font-size: 56px;
+      font-size: clamp(34px, 8vw, 48px);
       line-height: 1;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 6px 18px rgba(124, 92, 255, 0.45));
+      margin-bottom: clamp(8px, 2vw, 14px);
+      filter: drop-shadow(0 6px 16px rgba(124, 92, 255, 0.45));
     }
 
     h1 {
-      font-size: clamp(26px, 5vw, 38px);
+      font-size: clamp(21px, 5.4vw, 34px);
       font-weight: 800;
-      letter-spacing: -0.5px;
-      background: linear-gradient(90deg, #fff, #b9a8ff 60%, #7ce8dc);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      background: linear-gradient(90deg, #ffffff, #b9a8ff 55%, #7ce8dc);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     header p {
-      margin-top: 10px;
+      margin-top: clamp(6px, 1.6vw, 10px);
       color: var(--muted);
-      font-size: 15px;
+      font-size: clamp(13px, 3.4vw, 15px);
+      line-height: 1.5;
     }
 
+    /* ---------- Kartlar ---------- */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: clamp(12px, 2.4vw, 20px);
       width: 100%;
       max-width: 900px;
     }
@@ -75,105 +84,95 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-align: center;
       text-decoration: none;
       color: var(--text);
-      background: linear-gradient(180deg, var(--card), var(--bg-soft));
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, var(--surface), #131a33);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 32px 22px;
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      padding: clamp(20px, 3.4vw, 30px) clamp(14px, 2.6vw, 22px);
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     a.card:hover, a.card:focus-visible {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
       border-color: rgba(124, 92, 255, 0.55);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
       outline: none;
     }
 
+    a.card:active { transform: scale(0.985); background: var(--surface-2); }
+
     .icon {
-      width: 68px;
-      height: 68px;
-      border-radius: 18px;
+      width: clamp(46px, 11vw, 58px);
+      height: clamp(46px, 11vw, 58px);
+      border-radius: 16px;
       display: grid;
       place-items: center;
-      font-size: 34px;
-      background: rgba(124, 92, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      background: rgba(124, 92, 255, 0.16);
+      border: 1px solid var(--line);
+      flex-shrink: 0;
     }
 
-    .card.instagram .icon { background: rgba(225, 48, 108, 0.16); }
-    .card.app .icon { background: rgba(45, 212, 191, 0.14); }
-    .card.community .icon { background: rgba(255, 184, 77, 0.14); }
+    .icon svg { width: 55%; height: 55%; }
 
-    .card .body { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .card.instagram .icon { background: linear-gradient(135deg, rgba(225, 48, 108, 0.28), rgba(124, 92, 255, 0.22)); color: #ffd7e6; }
+    .card.app .icon { background: linear-gradient(135deg, rgba(45, 212, 191, 0.26), rgba(59, 130, 246, 0.22)); color: #c6fff6; }
+    .card.community .icon { background: linear-gradient(135deg, rgba(255, 184, 77, 0.26), rgba(217, 119, 6, 0.2)); color: #ffe6bd; }
 
-    .card .head { display: flex; align-items: center; gap: 10px; }
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 9px;
+    }
 
-    .card h2 { font-size: 19px; font-weight: 700; }
+    .card h2 {
+      font-size: clamp(16px, 4.2vw, 19px);
+      font-weight: 700;
+      line-height: 1.3;
+    }
 
-    .card p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+    .card p {
+      font-size: clamp(13px, 3.5vw, 14px);
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 30ch;
+    }
 
     .badge {
-      font-size: 11.5px;
+      font-size: clamp(10px, 2.6vw, 11.5px);
       font-weight: 600;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-      color: var(--accent-2);
-      background: rgba(45, 212, 191, 0.1);
-      border: 1px solid rgba(45, 212, 191, 0.25);
-      padding: 4px 10px;
+      letter-spacing: 0.3px;
+      color: #7ce8dc;
+      background: rgba(45, 212, 191, 0.12);
+      border: 1px solid rgba(45, 212, 191, 0.28);
+      padding: 3px 9px;
       border-radius: 999px;
       white-space: nowrap;
     }
 
     footer {
-      margin-top: 44px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 13px;
+      margin-top: clamp(24px, 5vw, 42px);
+      color: #8d9ab9;
+      font-size: 12.5px;
+      text-align: center;
     }
 
-    @media (max-width: 720px) {
-      body { padding: 26px 16px 22px; }
-
-      header { margin-bottom: 20px; }
-      .logo { font-size: 40px; margin-bottom: 8px; }
-      h1 { font-size: 22px; }
-      header p { font-size: 13px; margin-top: 6px; }
-
-      .cards { gap: 12px; max-width: 440px; }
-
-      a.card {
-        padding: 18px 16px;
-        gap: 8px;
-        border-radius: 16px;
-      }
-
-      a.card:hover, a.card:focus-visible { transform: none; box-shadow: none; }
-      a.card:active { transform: scale(0.98); background: var(--card-hover); }
-
-      .icon { width: 44px; height: 44px; border-radius: 12px; font-size: 22px; }
-
-      .card .body { gap: 5px; }
-      .card .head { gap: 6px 8px; justify-content: center; flex-wrap: wrap; }
-      .card h2 { font-size: 16px; }
-      .card p { font-size: 12.5px; line-height: 1.45; }
-
-      .badge { font-size: 10px; padding: 2px 8px; }
-
-      footer { margin-top: 26px; }
+    /* ---------- Mobil ---------- */
+    @media (max-width: 760px) {
+      .cards { grid-template-columns: 1fr; max-width: 440px; }
+      .card p { max-width: 34ch; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">🧬</div>
+    <div class="logo" aria-hidden="true">🧬</div>
     <h1>Kocatepe Genetik Topluluğu</h1>
     <p>Adım adım keşfet: uygulamamız, Instagram'ımız ve resmî topluluk sayfamız.</p>
   </header>
@@ -183,42 +182,53 @@
        href="https://www.instagram.com/kocatepegenetik/"
        target="_blank"
        rel="noopener noreferrer">
-      <div class="icon">📸</div>
-      <div class="body">
-        <div class="head">
-          <h2>Instagram</h2>
-          <span class="badge">@kocatepegenetik</span>
-        </div>
-        <p>Etkinlikler, duyurular ve topluluk paylaşımları için bizi takip et.</p>
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+        </svg>
+      </span>
+      <div class="head">
+        <h2>Instagram</h2>
+        <span class="badge">@kocatepegenetik</span>
       </div>
+      <p>Etkinlikler, duyurular ve topluluk paylaşımları için bizi takip et.</p>
     </a>
 
     <a class="card app"
        href="https://monchere01.github.io/kocatepe-genetik-toplulugu-app/"
        target="_blank"
        rel="noopener noreferrer">
-      <div class="icon">📱</div>
-      <div class="body">
-        <div class="head">
-          <h2>Uygulamamız</h2>
-          <span class="badge">PWA · Güncel</span>
-        </div>
-        <p>Güncel PWA uygulamamızı aç: etkinlikler, duyurular ve daha fazlası.</p>
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="2" width="12" height="20" rx="3" />
+          <path d="M10.5 18.5h3" />
+        </svg>
+      </span>
+      <div class="head">
+        <h2>Uygulamamız</h2>
+        <span class="badge">PWA · Güncel</span>
       </div>
+      <p>Güncel uygulamamızı aç: etkinlikler, duyurular ve tüm içerikler tek yerde.</p>
     </a>
 
     <a class="card community"
        href="https://topluluklar.aku.edu.tr/ogr.php"
        target="_blank"
        rel="noopener noreferrer">
-      <div class="icon">🎓</div>
-      <div class="body">
-        <div class="head">
-          <h2>Topluluk Sayfası</h2>
-          <span class="badge">AKÜ SKS</span>
-        </div>
-        <p>AKÜ SKS — Moleküler Biyoloji ve Genetik topluluk resmî sayfası.</p>
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 9.5 12 4.5 2 9.5l10 5 10-5Z" />
+          <path d="M6.5 11.5V17c0 1.7 2.7 3 5.5 3s5.5-1.3 5.5-3v-5.5" />
+          <path d="M21 10.5V16" />
+        </svg>
+      </span>
+      <div class="head">
+        <h2>Topluluk Sayfası</h2>
+        <span class="badge">AKÜ SKS</span>
       </div>
+      <p>AKÜ SKS — Moleküler Biyoloji ve Genetik topluluğunun resmî sayfası.</p>
     </a>
   </main>
 
