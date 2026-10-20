@@ -108,12 +108,15 @@
     .card.app .icon { background: rgba(45, 212, 191, 0.14); }
     .card.community .icon { background: rgba(255, 184, 77, 0.14); }
 
+    .card .body { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+    .card .head { display: flex; align-items: center; gap: 10px; }
+
     .card h2 { font-size: 19px; font-weight: 700; }
 
     .card p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 
     .badge {
-      margin-top: 6px;
       font-size: 11.5px;
       font-weight: 600;
       letter-spacing: 0.4px;
@@ -123,7 +126,10 @@
       border: 1px solid rgba(45, 212, 191, 0.25);
       padding: 4px 10px;
       border-radius: 999px;
+      white-space: nowrap;
     }
+
+    .chev { display: none; }
 
     footer {
       margin-top: 44px;
@@ -136,8 +142,50 @@
     }
 
     @media (max-width: 720px) {
-      .cards { grid-template-columns: 1fr; max-width: 420px; }
-      body { padding-top: 36px; }
+      body { padding: 28px 16px 24px; }
+
+      header { margin-bottom: 22px; }
+      .logo { font-size: 42px; margin-bottom: 10px; }
+      h1 { font-size: 24px; }
+      header p { font-size: 13.5px; margin-top: 8px; }
+
+      .cards { gap: 12px; max-width: 480px; }
+
+      a.card {
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+        text-align: left;
+        padding: 14px 16px;
+        border-radius: 16px;
+      }
+
+      a.card:hover, a.card:focus-visible { transform: none; box-shadow: none; }
+      a.card:active { transform: scale(0.98); background: var(--card-hover); }
+
+      .icon { width: 46px; height: 46px; border-radius: 13px; font-size: 23px; flex-shrink: 0; }
+
+      .card .body { align-items: flex-start; gap: 3px; flex: 1; min-width: 0; }
+      .card .head { flex-wrap: wrap; gap: 6px 8px; }
+      .card h2 { font-size: 15.5px; }
+      .card p { font-size: 12.5px; line-height: 1.45; }
+
+      .badge { font-size: 10px; padding: 2px 8px; }
+
+      .chev {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--muted);
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      footer { margin-top: 28px; }
     }
   </style>
 </head>
@@ -154,9 +202,14 @@
        target="_blank"
        rel="noopener noreferrer">
       <div class="icon">📸</div>
-      <h2>Instagram</h2>
-      <p>Etkinlikler, duyurular ve topluluk paylaşımları için bizi takip et.</p>
-      <span class="badge">@kocatepegenetik</span>
+      <div class="body">
+        <div class="head">
+          <h2>Instagram</h2>
+          <span class="badge">@kocatepegenetik</span>
+        </div>
+        <p>Etkinlikler, duyurular ve topluluk paylaşımları için bizi takip et.</p>
+      </div>
+      <span class="chev" aria-hidden="true">›</span>
     </a>
 
     <a class="card app"
@@ -164,9 +217,14 @@
        target="_blank"
        rel="noopener noreferrer">
       <div class="icon">📱</div>
-      <h2>Uygulamamız</h2>
-      <p>Güncel PWA uygulamamızı aç: etkinlikler, duyurular ve daha fazlası.</p>
-      <span class="badge">PWA · Güncel</span>
+      <div class="body">
+        <div class="head">
+          <h2>Uygulamamız</h2>
+          <span class="badge">PWA · Güncel</span>
+        </div>
+        <p>Güncel PWA uygulamamızı aç: etkinlikler, duyurular ve daha fazlası.</p>
+      </div>
+      <span class="chev" aria-hidden="true">›</span>
     </a>
 
     <a class="card community"
@@ -174,9 +232,14 @@
        target="_blank"
        rel="noopener noreferrer">
       <div class="icon">🎓</div>
-      <h2>Topluluk Sayfası</h2>
-      <p>AKÜ SKS — Moleküler Biyoloji ve Genetik topluluk resmî sayfası.</p>
-      <span class="badge">AKÜ SKS</span>
+      <div class="body">
+        <div class="head">
+          <h2>Topluluk Sayfası</h2>
+          <span class="badge">AKÜ SKS</span>
+        </div>
+        <p>AKÜ SKS — Moleküler Biyoloji ve Genetik topluluk resmî sayfası.</p>
+      </div>
+      <span class="chev" aria-hidden="true">›</span>
     </a>
   </main>
 
