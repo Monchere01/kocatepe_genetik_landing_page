@@ -123,6 +123,30 @@
     .card.app .icon { background: linear-gradient(135deg, rgba(45, 212, 191, 0.26), rgba(59, 130, 246, 0.22)); color: #c6fff6; }
     .card.community .icon { background: linear-gradient(135deg, rgba(255, 184, 77, 0.26), rgba(217, 119, 6, 0.2)); color: #ffe6bd; }
 
+    /* Etkinlik kartı — tam genişlikte banner, öne çıksın */
+    .card.event {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      gap: 18px;
+      padding: 18px 24px;
+      border-color: rgba(255, 214, 102, 0.32);
+      background: linear-gradient(115deg, rgba(255, 214, 102, 0.10), rgba(236, 72, 153, 0.08) 45%, #171d3d 90%);
+    }
+
+    .card.event .icon {
+      width: 54px;
+      height: 54px;
+      font-size: 25px;
+      background: linear-gradient(135deg, rgba(255, 214, 102, 0.28), rgba(236, 72, 153, 0.24));
+      border-color: rgba(255, 214, 102, 0.3);
+    }
+
+    .card.event .body { align-items: flex-start; gap: 4px; }
+    .card.event .head { justify-content: flex-start; gap: 6px 10px; }
+    .card.event .badge { color: #ffd666; background: rgba(255, 214, 102, 0.12); border-color: rgba(255, 214, 102, 0.3); }
+
     .head {
       display: flex;
       align-items: center;
@@ -167,6 +191,15 @@
     @media (max-width: 760px) {
       .cards { grid-template-columns: 1fr; max-width: 440px; }
       .card p { max-width: 34ch; }
+
+      .card.event {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px 16px;
+      }
+      .card.event .body { align-items: center; }
+      .card.event .head { flex-direction: column; justify-content: center; }
     }
   </style>
 </head>
@@ -178,6 +211,20 @@
   </header>
 
   <main class="cards">
+    <a class="card event"
+       href="https://forms.gle/DZG6gN2AqrMJ1JDy7"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="icon" aria-hidden="true">🎉</span>
+      <div class="body">
+        <div class="head">
+          <h2>Kocatepe Genetik Topluluğu Tanışma Etkinliği</h2>
+          <span class="badge">Etkinlik</span>
+        </div>
+        <p>Katılmak için tıklayınız.</p>
+      </div>
+    </a>
+
     <a class="card instagram"
        href="https://www.instagram.com/kocatepegenetik/"
        target="_blank"
